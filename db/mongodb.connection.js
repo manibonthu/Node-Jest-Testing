@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
-// const userName = process.env.uname;
-// const passWord = process.env.pwd;
-const userName = "node-tdd";
-const passWord = "NODETDD1";
+const userName = process.env.uname;
+const passWord = process.env.pwd;
+
 const connect = async () =>{
     try {
         mongoose.connect(`mongodb://${userName}:${passWord}@ds243148.mlab.com:43148/todo-tdd-testing`,
