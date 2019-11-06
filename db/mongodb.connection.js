@@ -1,7 +1,15 @@
 const mongoose = require("mongoose");
-const userName = process.env.userName;
-const passWord = process.env.passWord;
+// const userName = process.env.uname;
+// const passWord = process.env.pwd;
+const userName = "node-tdd";
+const passWord = "NODETDD1";
 const connect = async () =>{
-    mongoose.connect(`mongodb://${userName}:${passWord}@ds243148.mlab.com:43148/todo-tdd-testing`);
+    try {
+        mongoose.connect(`mongodb://${userName}:${passWord}@ds243148.mlab.com:43148/todo-tdd-testing`,
+        { useNewUrlParser: true });
+    } catch(err){
+        console.log("Error connecting to Database");
+    }
+   
 }
 module.exports = { connect };
